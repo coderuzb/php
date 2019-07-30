@@ -27,6 +27,7 @@ $admin = "638611275";
                             [
                                 [ 'text' => "Dostlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/";
                             ] ,
+]
                        ];
     
     $inline_kb_options = [
@@ -104,21 +105,6 @@ $json_kb = json_encode($GLOBALS['inline_kb_options']);
     send_reply($url, $post_params);
 }
 
-function detect_callback_received_and_reply() {
-        
-        $callback_data = $GLOBALS['data'];
-       
-        if($callback_data == "info") {
-     
-            $url = $GLOBALS['bot_url'] . "/answerCallbackQuery";
-            $post_params = [ 
-                            'callback_query_id' => $GLOBALS['callback_query_id'] , 
-                            'text'              => "salom",
-                            'show_alert'=> true
-                            ];
-            send_reply($url, $post_params);
-        }
-    }
 
 function hajm($size){
   $base = log($size) / log(1024);
