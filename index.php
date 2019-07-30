@@ -23,7 +23,16 @@ $admin = "638611275";
     }
 	
     //-------------------------------------
-
+  $inline_keyboard = [
+                            [
+                                [ 'text' => "Doʻstlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/".$GLOBALS['cid'];
+                            ] ,
+                       ];
+    
+    $inline_kb_options = [
+                            'inline_keyboard' => $inline_keyboard
+                         ];
+    
 
 
 if($text == "/start"){
@@ -63,16 +72,7 @@ $nomi = str_replace("@UzApks.apk","", $faylnomi);
 $cid = $update_array["channel_post"]["chat"]["id"];
 $file_id = $update_array["channel_post"]["document"]["file_id"];
 $rasm = "BQADAgADaAQAAsIR2Un7Vr3Q3opNyAI";
-  $inline_keyboard = [
-                            [
-                                [ 'text' => "Doʻstlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/".$GLOBALS['cid'];
-                            ] ,
-                       ];
-    
-    $inline_kb_options = [
-                            'inline_keyboard' => $inline_keyboard
-                         ];
-    
+  
 if($cpost){
 
 $caption = $update_array["channel_post"]["caption"];
