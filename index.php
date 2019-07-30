@@ -37,7 +37,7 @@ $admin = "638611275";
 
 if($text == "/start"){
 
-   $reply = "this is a message";
+   $reply = "salom";
     $url = $GLOBALS['bot_url'] . "/sendMessage";
     $post_params = [ 'chat_id' => $GLOBALS['chat_id'] , 'text' => $reply ];
     
