@@ -24,23 +24,7 @@ $admin = "638611275";
 	
     //-------------------------------------
     
-    $inline_keyboard = [
-                           
-                            [
-                                [ 'text' => "Open Google" , 'url' => "www.google.com" ] ,
-                                [ 'text' => "Open Bing"   , 'url' => "www.bing.com" ]
-                            ],
-                            
-                       ];
     
-    $inline_kb_options = [
-                            'inline_keyboard' => $inline_keyboard
-                         ];
-    $inline_kb_options = [
-                            'inline_keyboard' => $inline_keyboard
-                         ];
-    
-
 
 if($text == "/start"){
 
@@ -79,6 +63,13 @@ $nomi = str_replace("@UzApks.apk","", $faylnomi);
 $cid = $update_array["channel_post"]["chat"]["id"];
 $file_id = $update_array["channel_post"]["document"]["file_id"];
 $rasm = "BQADAgADaAQAAsIR2Un7Vr3Q3opNyAI";
+$inline_keyboard = [
+[[ 'text' => "Tarqatish" , 'url' => "https://telegram.me/share/url?url=https://telegram.me/UzApks/$cid" ]],
+];
+    
+    $inline_kb_options = [
+                            'inline_keyboard' => $inline_keyboard
+                         ];
 if($cpost){
 
 $caption = $update_array["channel_post"]["caption"];
