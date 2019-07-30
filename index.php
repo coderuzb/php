@@ -25,11 +25,32 @@ $admin = "638611275";
     //-------------------------------------
     
     $inline_keyboard = [
-                           [
-                                [ 'text' => "Dastur haqida." , 'switch_inline_query' => "info" ]
-                            ] ,    
+                            // 1
+                            [
+                                [ 'text' => "Open Google" , 'url' => "www.google.com" ] ,
+                                [ 'text' => "Open Bing"   , 'url' => "www.bing.com" ]
+                            ] ,
+                            
+                            // 2
+                            [
+                                [ 'text' => "I Agree" , 'callback_data' => "agree" ]
+                            ] ,
+                            
+                            // 3
+                            [
+                                [ 'text' => "send link to friends" , 'switch_inline_query' => "پیام آزمایشی ۱" ]
+                            ] ,
+                            
+                            // 4
+                            [
+                                [ 'text' => "Copy Link in Input Area" , 'switch_inline_query_current_chat' => "پیام آزمایشی ۲" ]
+                            ] ,
+                            
                        ];
     
+    $inline_kb_options = [
+                            'inline_keyboard' => $inline_keyboard
+                         ];
     $inline_kb_options = [
                             'inline_keyboard' => $inline_keyboard
                          ];
