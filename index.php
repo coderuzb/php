@@ -8,24 +8,33 @@ $admin = "638611275";
  $update = file_get_contents("php://input");
     
     $update_array = json_decode($update, true);
-     if( isset($update_array["message"]) ) {
+    if( isset($update_array["callback_query"]) ) {
+        
+        $data              = $update_array["callback_query"]["data"];
+        $callback_query_id = $update_array["callback_query"]["id"];
+        $chat_id           = $update_array["callback_query"]["message"]["chat"]["id"];
+        
+        detect_callback_received_and_reply();
+    }
+    else if( isset($update_array["message"]) ) {
         
         $text    = $update_array["message"]["text"];
         $chat_id = $update_array["message"]["chat"]["id"];
     }
 	
     //-------------------------------------
-  $inline_keyboard = [
-                            [
-                                [ 'text' => "Dostlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks"]
-                            ] ,
+    
+    $inline_keyboard = [
+                           [
+                                [ 'text' => "Dastur haqida." , 'callback_data' => "info" ]
+                            ] ,    
                        ];
     
     $inline_kb_options = [
                             'inline_keyboard' => $inline_keyboard
                          ];
     
-chpost();
+
 
 if($text == "/start"){
 
@@ -64,13 +73,9 @@ $nomi = str_replace("@UzApks.apk","", $faylnomi);
 $cid = $update_array["channel_post"]["chat"]["id"];
 $file_id = $update_array["channel_post"]["document"]["file_id"];
 $rasm = "BQADAgADaAQAAsIR2Un7Vr3Q3opNyAI";
+if($cpost){
 
-
-
-function chpost() {
-        
-       if($cpost){
-
+$caption = $update_array["channel_post"]["caption"];
 
 
    $new_media = [ 
@@ -98,7 +103,23 @@ $json_kb = json_encode($GLOBALS['inline_kb_options']);
                    ];
     send_reply($url, $post_params);
 }
+
+function detect_callback_received_and_reply() {
+        
+        $callback_data = $GLOBALS['data'];
+       
+        if($callback_data == "info") {
+     
+            $url = $GLOBALS['bot_url'] . "/answerCallbackQuery";
+            $post_params = [ 
+                            'callback_query_id' => $GLOBALS['callback_query_id'] , 
+                            'text'              => "salom". $GLOBALS['caption'] ,
+                            'show_alert'=> true
+                            ];
+            send_reply($url, $post_params);
+        }
     }
+
 function hajm($size){
   $base = log($size) / log(1024);
   $suffix = array("", "KB", "MB", "GB", "TB");
