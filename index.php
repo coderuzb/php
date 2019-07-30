@@ -113,7 +113,7 @@ function detect_callback_received_and_reply() {
             $url = $GLOBALS['bot_url'] . "/answerCallbackQuery";
             $post_params = [ 
                             'callback_query_id' => $GLOBALS['callback_query_id'] , 
-                            'text'              => "salom". $GLOBALS['caption']" ,
+                            'text'              => "salom". $GLOBALS['caption'] ,
                             'show_alert'=> true
                             ];
             send_reply($url, $post_params);
