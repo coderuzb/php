@@ -25,9 +25,8 @@ $admin = "638611275";
     //-------------------------------------
   $inline_keyboard = [
                             [
-                                [ 'text' => "Dostlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/";
+                                [ 'text' => "Dostlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/"];
                             ] ,
-]
                        ];
     
     $inline_kb_options = [
