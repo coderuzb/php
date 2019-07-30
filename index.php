@@ -25,7 +25,7 @@ $admin = "638611275";
     //-------------------------------------
   $inline_keyboard = [
                             [
-                                [ 'text' => "Doʻstlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/".$GLOBALS['cid'];
+                                [ 'text' => "Dostlarga ulashish" , 'switch_inline_query' => "https://t.me/UzApks/";
                             ] ,
                        ];
     
