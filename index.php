@@ -26,7 +26,7 @@ $admin = "638611275";
     
     $inline_keyboard = [
                            [
-                                [ 'text' => "Dastur haqida." , 'callback_data' => "info" ]
+                                [ 'text' => "Dastur haqida." , 'switch_inline_query' => "info" ]
                             ] ,    
                        ];
     
