@@ -14,7 +14,7 @@ $admin = "638611275";
         $callback_query_id = $update_array["callback_query"]["id"];
         $chat_id           = $update_array["callback_query"]["message"]["chat"]["id"];
         
-        detect_callback_received_and_reply();
+        
     }
     else if( isset($update_array["message"]) ) {
         
