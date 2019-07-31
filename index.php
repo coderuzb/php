@@ -71,7 +71,7 @@ $inline_keyboard = [
                             'inline_keyboard' => $inline_keyboard
                          ];
 if($cpost){
-
+file_put_contents("salom.txt","hello");
 $caption = $update_array["channel_post"]["caption"];
 
 
